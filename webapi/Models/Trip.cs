@@ -8,6 +8,7 @@
         public double Distance { get; set; }
         public double Price { get; set; }
         public string DriverPhone { get; set; }
+        public string UserPhone { get; set; }
 
     }
 }

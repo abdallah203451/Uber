@@ -1,0 +1,52 @@
+<!-- <body> -->
+<div class="cont">
+    <!-- <div class="column">
+        <input (click)="refreshList()" type="submit" class="btn btn-primary" value="Refresh">
+    </div> -->
+    <div class="column">
+        <a *ngIf="this.flag=='1'" routerLink ="/create-bustrips"><input style="height: 5%; width: 12%; font-size: 22px; position: absolute; top: 12%; left: 10%;" type="submit" class="btn btn-primary" value="Create Bus Trip"></a>
+    </div>
+    <div class="header">
+        Available Trips
+    </div>
+    <!-- <div class="ss"> -->
+    <div *ngFor="let trip of list;" class="form-container">
+        <div class="row" style="height: 100%;">
+            <div class="col col-4">
+                <div style="height: 40%; padding-left: 40px; align-items: center; font-size: 27px; margin-top: 5%;">
+                    From: <b>{{trip.from}}</b>
+                </div>
+                <div style="height: 40%; padding-left: 40px; align-items: center; font-size: 27px;">
+                    To: <b>{{trip.to}}</b>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div style="height: 33%; align-items: center; font-size: 26px;">
+                    Distance: <b>{{trip.distance}} km</b>
+                </div>
+                <div style="height: 33%; align-items: center; font-size: 26px;">
+                    Price: <b>{{trip.price}} LE</b>
+                </div>
+                <div style="height: 33%; align-items: center; font-size: 26px;">
+                    Time: <b>{{trip.date.substr(11)}}</b>
+                </div>
+                <!-- <div style="height: 25%; align-items: center; font-size: 26px;">
+                    End Time: <b>{{trip.startDate.getHours()}}:{{trip.startDate.getMinutes()}}</b>
+                </div> -->
+            </div>
+            <div class="col col-4" style="align-items: center;">
+                <div style="height: 30%; align-items: center; font-size: 26px;">
+                    Date: <b>{{trip.date.substr(0,10)}}</b>
+                </div>
+                <div style="height: 37%; align-items: center; font-size: 26px;">
+                    Number of reservation: <b>{{trip.numOfReservation}}</b>
+                </div>
+                <div>
+                    <input (click)="getTicket(trip.id)" *ngIf="this.flag!='1'" style="height: 35%; width: 55%; font-size: 22px;" type="submit" class="btn btn-success" value="get ticket">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
+<!-- </body> -->

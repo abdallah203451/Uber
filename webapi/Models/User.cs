@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -13,5 +14,6 @@ namespace webapi.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
+
     }
 }

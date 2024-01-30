@@ -7,13 +7,14 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { DriverSignInComponent } from '../driver-sign-in/driver-sign-in.component';
 @Component({
   selector: 'app-rider-sign-in',
   templateUrl: './rider-sign-in.component.html',
   styleUrls: ['./rider-sign-in.component.css'],
 })
 export class RiderSignInComponent {
+  public static loggedInRider: string;
   registerForm!: FormGroup;
   loginForm!: FormGroup;
   phonePattern = '^[0-9]{4}[0-9]{3}[0-9]{4}$';
@@ -117,6 +118,10 @@ export class RiderSignInComponent {
       this.auth.loginRider(obj).subscribe({
         next: (res) => {
           alert(res.message);
+          RiderSignInComponent.loggedInRider = this.UserLogin.phone;
+          DriverSignInComponent.driverOrRider=0;
+          localStorage.setItem('isdriver', "0");  
+          localStorage.setItem('token', this.UserLogin.phone); 
           this.router.navigate(['/home'])
         },
         error: (err) => {

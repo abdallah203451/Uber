@@ -10,8 +10,9 @@ namespace webapi.Data
         public DbSet<Place> Places { get; set; }
         public DbSet<GraphNode> GraphNodes { get; set; }
         public DbSet<Trip> Trips { get; set; }
+		public DbSet<BusTrip> busTrips { get; set; }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }

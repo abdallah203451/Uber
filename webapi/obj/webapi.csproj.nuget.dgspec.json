@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Abdallah Ashraf\\programming projects\\AAAAAAAAAAAA\\Uber\\webapi\\webapi.csproj": {}
+    "D:\\Abdallah Ashraf\\programming projects\\Uber Github\\Uber\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "F:\\Abdallah Ashraf\\programming projects\\AAAAAAAAAAAA\\Uber\\webapi\\webapi.csproj": {
+    "D:\\Abdallah Ashraf\\programming projects\\Uber Github\\Uber\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Abdallah Ashraf\\programming projects\\AAAAAAAAAAAA\\Uber\\webapi\\webapi.csproj",
+        "projectUniqueName": "D:\\Abdallah Ashraf\\programming projects\\Uber Github\\Uber\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "F:\\Abdallah Ashraf\\programming projects\\AAAAAAAAAAAA\\Uber\\webapi\\webapi.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "F:\\Abdallah Ashraf\\programming projects\\AAAAAAAAAAAA\\Uber\\webapi\\obj\\",
+        "projectPath": "D:\\Abdallah Ashraf\\programming projects\\Uber Github\\Uber\\webapi\\webapi.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Abdallah Ashraf\\programming projects\\Uber Github\\Uber\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,9 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "default"
         }
       },
       "frameworks": {
@@ -82,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.6.23330.14\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

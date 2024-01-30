@@ -9,12 +9,16 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { DriverTripsComponent } from '../driver-trips/driver-trips.component';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { DriverSignInComponent } from '../driver-sign-in/driver-sign-in.component';
+import { UpdatelistService } from 'src/app/services/updatelist.service';
+import { RiderTripsComponent } from '../rider-trips/rider-trips.component';
+import { RiderSignInComponent } from '../rider-sign-in/rider-sign-in.component';
+
 @Component({
   selector: 'app-request-ride',
   templateUrl: './request-ride.component.html',
   styleUrls: ['./request-ride.component.css'],
 })
-export class RequestRideComponent {
+export class RequestRideComponent implements OnInit {
   input1: string = '';
   input2: string = '';
   private baseUrl:string = "https://localhost:7248/api/Place/";
@@ -24,8 +28,8 @@ export class RequestRideComponent {
   driverAccept?: number;
   arr: any;
   public static tripList:any;
-  
-  constructor (private http: HttpClient) { 
+  //DriverTripsComponent:DriverTripsComponent = new DriverTripsComponent(this.http, this.UpdatelistService);
+  constructor (private http: HttpClient, private UpdatelistService:UpdatelistService) { 
     this.submit=0;
     this.driverAccept=0;
     this.http.get<string[]> (`${this.baseUrl}from`).subscribe(res =>{
@@ -37,20 +41,29 @@ export class RequestRideComponent {
         }
       );
   }
-  
+
+  ngOnInit() {
+  }
+
   onSubmit() {
     var input1 = document.getElementById("from") as HTMLInputElement;
     var input2 = document.getElementById("to") as HTMLInputElement;
+    var type = Number(localStorage.getItem('reqRide'));
+    var riderphone:string = localStorage.getItem('token')!;
+
     let queryParams = new HttpParams();
     queryParams = queryParams.append("from",input1.value);
     queryParams = queryParams.append("to",input2.value);
-    queryParams = queryParams.append("rideType",0);
+    queryParams = queryParams.append("rideType",type);
+    queryParams = queryParams.append("userPhone", riderphone);
     this.http.get<any> (`${this.baseUrl}distance`, {params:queryParams}).subscribe({
       next: (res) => {
         this.arr = res.data as any;
       }
     });
-
+    this.UpdatelistService.sendClickEvent();
+    //this.DriverTripsComponent.refreshList();
+    //this.DriverTripsComponent.refreshList();
     this.submit = 1;
   }
 

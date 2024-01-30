@@ -10,11 +10,7 @@ export class HomeComponent implements OnInit{
   text: string = "";
   constructor(){}
   ngOnInit(): void {}
-  ifempty(){
-    if(this.text == ""){
-      this.text = "aaaaaaaa";
-    }else{
-      this.text = "bbbbbbbb";
-    }
+  rideType(id:any){
+    localStorage.setItem('reqRide', id); 
   }
 }

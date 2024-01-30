@@ -21,7 +21,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {NgFor, AsyncPipe} from '@angular/common';
 import { DriverTripsComponent } from './pages/driver-trips/driver-trips.component';
-
+import { BusTripsComponent } from './pages/bus-trips/bus-trips.component';
+import { CreateBustripsComponent } from './pages/create-bustrips/create-bustrips.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+//import { DateTimePickerRFSampleComponent } from "./scheduling/datepicker/reactive-form/reactive-form.component";
+import { HammerModule } from '@angular/platform-browser';
+import { 
+	IgxDatePickerModule,
+	IgxTimePickerModule
+ } from "igniteui-angular";
+ import {DatePipe} from '@angular/common'; 
+import { RiderTripsComponent } from './pages/rider-trips/rider-trips.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +42,13 @@ import { DriverTripsComponent } from './pages/driver-trips/driver-trips.componen
     RiderSignInComponent,
     NavBarComponent,
     RequestRideComponent,
-    DriverTripsComponent
+    DriverTripsComponent,
+    BusTripsComponent,
+    CreateBustripsComponent,
+    RiderTripsComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, NgbModule, FormsModule, ReactiveFormsModule,MatAutocompleteModule,MatFormFieldModule,MatInputModule,NgFor,AsyncPipe,
+    BrowserModule, HttpClientModule, NgbModule, FormsModule, ReactiveFormsModule,MatAutocompleteModule,MatFormFieldModule,MatInputModule,NgFor,AsyncPipe,BrowserAnimationsModule, HammerModule, IgxTimePickerModule,IgxDatePickerModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: 'driver-or-rider', component: DriverOrRiderComponent},
@@ -43,10 +56,13 @@ import { DriverTripsComponent } from './pages/driver-trips/driver-trips.componen
       {path: 'driver-sign-in', component: DriverSignInComponent},
       {path: 'driver-trips', component: DriverTripsComponent},
       {path: 'request-ride', component: RequestRideComponent},
+      {path: 'bus-trips', component: BusTripsComponent},
+      {path: 'create-bustrips', component: CreateBustripsComponent},
+      {path: 'rider-trips', component: RiderTripsComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
     ]),
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

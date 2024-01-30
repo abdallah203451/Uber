@@ -26,6 +26,13 @@ namespace webapi.Controllers
             return Ok(trips);
         }
 
+        [HttpGet("userTrips")]
+        public async Task<ActionResult<IEnumerable<Trip>>> UserTrips(string phone)
+        {
+            List<Trip> trips = await _Context.Trips.Where(u => u.UserPhone == phone).ToListAsync();
+            return Ok(trips);
+        }
+
         [HttpDelete("remove")]
         public async Task<IActionResult> RemoveTrip(int id, int cond)
         {

@@ -1,0 +1,37 @@
+label{
+    font-size: x-large;
+    font-weight: bolder;
+}
+input{
+    font-size: large;
+}
+.button{
+    background-color: rgb(47, 0, 255);
+    color: white;
+    border-radius: 7px;
+    width: 10%;
+    height: 50px;
+    font-size: 22px;
+    position: absolute; 
+    top: 56%; 
+    left: 44%;
+}
+.list {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+    width: 35vh;
+  }
+  .list1 {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+    width: 35vh;
+  }
+  ul {
+    list-style:none;
+    padding: 0;
+    margin-top: -2px;
+    margin-left: 1px;
+    max-height: 100px;
+  }

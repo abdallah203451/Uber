@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { RiderSignInComponent } from '../rider-sign-in/rider-sign-in.component';
 @Component({
   selector: 'app-driver-sign-in',
   templateUrl: './driver-sign-in.component.html',
   styleUrls: ['./driver-sign-in.component.css']
 })
 export class DriverSignInComponent {
+  public static driverOrRider = -1;
   registerForm!: FormGroup;
   loginForm!: FormGroup;
   phonePattern = '^[0-9]{4}[0-9]{3}[0-9]{4}$';
@@ -132,6 +133,9 @@ export class DriverSignInComponent {
         next: (res) => {
           alert(res.message);
           DriverSignInComponent.loggedInDriver = this.UserLogin.phone;
+          DriverSignInComponent.driverOrRider = 1;
+          localStorage.setItem('isdriver', "1");
+          localStorage.setItem('token',  this.UserLogin.phone);
           this.router.navigate(['/driver-trips'])
         },
         error: (err) => {

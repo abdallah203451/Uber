@@ -42,7 +42,7 @@ namespace webapi.Controllers
 
 
         [HttpGet("distance")]
-        public async Task<IActionResult> distance(string from, string to, int rideType)
+        public async Task<IActionResult> distance(string from, string to, int rideType, string userPhone)
         {
             List<GraphNode> nodes = await _Context.GraphNodes.ToListAsync();
             Dictionary<string, int> idPlaces = new Dictionary<string, int>();
@@ -56,7 +56,8 @@ namespace webapi.Controllers
             Graph g = new Graph(V);
             for (int i = 0; i < placesList.Count(); i++)
             {
-                g.AddEdge(idPlaces[placesList[i].From] - 1, idPlaces[placesList[i].To] - 1, placesList[i].distance);
+                int x = idPlaces[placesList[i].From] - 1;
+				g.AddEdge(idPlaces[placesList[i].From] - 1, idPlaces[placesList[i].To] - 1, placesList[i].distance);
             }
 
             GraphNode fromNode = await _Context.GraphNodes.FirstOrDefaultAsync(u => u.Node == from);
@@ -97,6 +98,7 @@ namespace webapi.Controllers
             trip.Distance = distance;
             trip.Price = price;
             trip.DriverPhone = driver.Phone;
+            trip.UserPhone = userPhone;
 
             await _Context.Trips.AddAsync(trip);
             await _Context.SaveChangesAsync();

@@ -1,15 +1,15 @@
-<body>
-    <div>
+
         <nav>
-            <div style="margin-left: 20px;">
-                <h1>Uber</h1>
+            <div style="font-size: 38px; margin-left: 20px;padding: 0px; ">
+                Uber
             </div>
             <div style="height: 100%;">
                 <ul>
-                    <li><a routerLink=""><button>Home</button></a></li>
+                    <li><a routerLink =""><button>Home</button></a></li>
+                    <li><a (click)="riderOrDriber()"><button >Your Trips</button></a></li>
+                    <li><a  routerLink ="/bus-trips"><button>Bus Trips</button></a></li>
                     <li><a routerLink ="/driver-or-rider"><button>Sign In</button></a></li>
                 </ul>
             </div>
         </nav>
-    </div>     
-</body>
+        

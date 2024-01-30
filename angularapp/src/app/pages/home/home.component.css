@@ -57,8 +57,8 @@ nav {
   }
 
   .card {
-    width: 280px;
-    height: 370px;
+    width: 16%;
+    height: 40%;
     border: 1px solid #282bc2;
     position: absolute;
     top: 61%;
@@ -117,7 +117,7 @@ nav {
     position: absolute;
     top: 14%;
     left: 3%;
-    font-size: 65px;
+    font-size: 60px;
     color:black;
   }
 

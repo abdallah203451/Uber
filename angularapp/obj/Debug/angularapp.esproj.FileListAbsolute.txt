@@ -1,2 +1,3 @@
 F:\Abdallah Ashraf\programming projects\AAAAAAAAAAAA\Uber\angularapp\obj\Debug\angularapp.esproj.SuggestedBindingRedirects.cache
 F:\Abdallah Ashraf\programming projects\AAAAAAAAAAAA\Uber\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache
+D:\Abdallah Ashraf\programming projects\Uber Github\Uber\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache
