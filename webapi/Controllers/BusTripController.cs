@@ -83,7 +83,7 @@ namespace webapi.Controllers
 
 
 		[HttpPut("UpdateReservationNum")]
-		public async Task<IActionResult> UpdateReservationNum(int id)
+		public async Task<IActionResult> UpdateReservationNum([FromBody] int id)
 		{
 			Models.BusTrip busTrip = await _Context.busTrips.FirstOrDefaultAsync(u => u.Id == id);
 			busTrip.NumOfReservation++;

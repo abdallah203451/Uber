@@ -107,7 +107,7 @@ export class DriverSignInComponent {
       this.auth.signUpDriver(obj).subscribe({
         next: (res) => {
           alert(res.message);
-          this.router.navigate(['/home'])
+          //this.router.navigate(['/home'])
         },
         error: (err) => {
           alert(err?.error.message);

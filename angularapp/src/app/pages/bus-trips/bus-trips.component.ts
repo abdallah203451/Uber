@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { DriverSignInComponent } from '../driver-sign-in/driver-sign-in.component';
 import { RequestRideComponent } from '../request-ride/request-ride.component';
 import { BusTrip } from 'src/app/models/bustrip.model';
+import { lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-bus-trips',
   templateUrl: './bus-trips.component.html',
@@ -31,10 +32,8 @@ export class BusTripsComponent {
   ngOnInit(){
   }
 
-  getTicket(id:any){
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append("id",id);
-    this.http.put(`${this.baseUrl}UpdateReservationNum`,id).subscribe();
+  async getTicket(id:any){
+    await  lastValueFrom(this.http.put(`${this.baseUrl}UpdateReservationNum`,id));
     this.http.get(`${this.baseUrl}allBusTrips`).subscribe({
       next: (res) => {
         this.list = res as any[];
